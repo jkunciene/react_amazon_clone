@@ -1,10 +1,12 @@
 import React from 'react'
+import './app.css'
+import Header from './components/header/Header'
 
 
 function App() {
   return (
     <div>
-      <p>veikia</p>
+      <Header/>
     </div>
   );
 }
