@@ -20,6 +20,7 @@ function Home() {
                   
                     
                         <Product
+                            id={1}
                             title='Pirma'
                             price={10}
                             image='https://images-na.ssl-images-amazon.com/images/I/71URNvzoWqL._SL1500_.jpg'
