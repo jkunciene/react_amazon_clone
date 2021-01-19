@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React from 'react';
 import Product from '../product/Product'
 import './home.css'
 import cover from '../../img/cover.jpg'
@@ -13,7 +13,7 @@ function Home() {
             <div className='home_container'>
                 <img className='home_image' 
                 src={cover}
-                alt='amazon image'
+                alt='amazon logo'
                 />
 
                 <div className='home_row'>
