@@ -26,6 +26,15 @@ function Home() {
                             image='https://images-na.ssl-images-amazon.com/images/I/71URNvzoWqL._SL1500_.jpg'
                             rating={4}
                         />
+
+                          
+                        <Product
+                            id={2}
+                            title='Antra'
+                            price={10}
+                            image='https://images-na.ssl-images-amazon.com/images/I/71URNvzoWqL._SL1500_.jpg'
+                            rating={4}
+                        />
                             
                   
                 </div>
