@@ -33,7 +33,7 @@ function Home() {
                             title='Antra'
                             price={10}
                             image='https://images-na.ssl-images-amazon.com/images/I/71URNvzoWqL._SL1500_.jpg'
-                            rating={4}
+                            rating={3}
                         />
                             
                   
