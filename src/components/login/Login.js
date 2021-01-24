@@ -1,9 +1,35 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './login.css'
 import logo from '../../img/logo.svg.png'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import { auth } from '../../firebase'
+
 
 const Login = () => {
+
+    const history = useHistory();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const signIn = e => {
+        e.preventDefault()
+
+    }
+
+    const register = e => {
+        e.preventDefault()
+
+        auth
+        .createUserWithEmailAndPassword(email, password)
+        //it successfully created a new user wiht email and passwd
+        .then((auth) =>{
+            console.log(auth);
+        })
+        .catch(error => alert(error.message))
+       
+    }
+
+
     return (
         <div className='login'>
             <Link to='/'>
@@ -18,19 +44,21 @@ const Login = () => {
 
                 <form>
                     <h5>E-mail</h5>
-                    <input type='text'/>
+                    <input type='text' value={email} onChange={e => setEmail(e.target.value)}/>
 
                     <h5>Password</h5>
-                    <input type='password'/>
+                    <input type='password' value={password} onChange={e => setPassword(e.target.value)}/>
 
-                    <button className='login_signInButton'>Sign In</button>
+                    <button type='submit' onClick={signIn}
+                    className='login_signInButton'>Sign In</button>
 
                 </form>
                 <p>
                     By signing-in you agree to MY Conditions of Use & Copy.
                 </p>
 
-                <button className='login_registerButton'>Create new Account</button>
+                <button onClick={register}
+                className='login_registerButton'>Create new Account</button>
 
             </div>
         </div>
