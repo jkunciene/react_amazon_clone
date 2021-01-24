@@ -12,7 +12,15 @@ const Login = () => {
     const [password, setPassword] = useState('');
 
     const signIn = e => {
-        e.preventDefault()
+        e.preventDefault();
+
+        auth
+            
+            .signInWithEmailAndPassword(email, password)
+            .then(auth =>{
+                history.push('/')
+            })
+            .catch(error => alert(console.error.message))
 
     }
 
@@ -23,7 +31,10 @@ const Login = () => {
         .createUserWithEmailAndPassword(email, password)
         //it successfully created a new user wiht email and passwd
         .then((auth) =>{
-            console.log(auth);
+            //console.log(auth);
+            if(auth){
+                history.push('/')
+            }
         })
         .catch(error => alert(error.message))
        
