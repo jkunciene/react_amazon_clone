@@ -15,6 +15,7 @@ import {
 import Login from './components/login/Login';
 import { auth } from './firebase';
 import Payment from './components/payment/Payment';
+import Orders from './components/orders/Orders';
 
 const promise = loadStripe(
   "pk_test_51IDXp3LfME8Q3ekweweyb14hh91QC5XWo9x1PfkLPaalBTqtcTU47aM50IE2mxA0gxYq5nypaVL5AatZXhcrQa5300FFLu0tO9"
@@ -55,6 +56,9 @@ function App() {
     <Router>
       <div>
         <Switch>
+          <Route path="/orders">
+            <Orders/>
+          </Route>
           <Route path="/login">
             <Login/>
           </Route>
