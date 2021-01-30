@@ -21,7 +21,7 @@ const Payment = () => {
     const elements = useElements();
 
     const [succeeded, setSucceeded] = useState(false);
-    const [processing, setProcesing] = useState(true);
+    const [processing, setProcesing] = useState(false);
 
     const [error, setError]=useState(null);
     const [disabled, setDisabled] = useState(true);
