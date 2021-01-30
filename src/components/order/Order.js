@@ -2,6 +2,8 @@ import React from 'react';
 import './order.css';
 import moment from 'moment';
 import CheckoutProduct from '../checkoutProduct/CheckoutProduct';
+import CurrencyFormat from 'react-currency-format';
+
 
 const Order = ({order}) => {
     return (
@@ -19,9 +21,21 @@ const Order = ({order}) => {
                         image={item.image}
                         price={item.price}
                         rating={item.rating}
+                        hideButton
                     />
-                )
-            )}
+                ))}
+                <CurrencyFormat
+                    renderText={(value) =>(
+                    <>
+                    <h3 className='order_total'>Order Total: {value}</h3>
+                    </>
+                    )}
+                                    decimalScale={2}
+                                    value={order.data.amount / 100}
+                                    displayType={'text'}
+                                    thousandSeperator={true}
+                                    prefix={'$'}
+                                />
 
         </div>
     )

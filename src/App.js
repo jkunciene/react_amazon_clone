@@ -57,6 +57,7 @@ function App() {
       <div>
         <Switch>
           <Route path="/orders">
+            <Header/>
             <Orders/>
           </Route>
           <Route path="/login">
